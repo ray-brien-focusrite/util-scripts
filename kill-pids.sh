@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Example CLI usage:
-# .~/util-scripts/kill-pids.sh 'pf2 ada'
+# .~/util-scripts/kill-pids.sh '<tool> <module/lib>'
 
 # Colors!
 GREEN='\033[0;32m'
