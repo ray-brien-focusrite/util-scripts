@@ -1,0 +1,24 @@
+
+
+
+      - name: Run ruff on changed files
+        if: steps.changed-py-files.outputs.any_changed == 'true'
+        run: |
+          uv run ruff check ${{ steps.changed-py-files.outputs.all_changed_files }}
+          uv run ruff format ${{ steps.changed-py-files.outputs.all_changed_files }}
+
+      # - name: Commit linter and formatter changes
+      #   run: |
+      #     echo "Committing linter and formatter changes using our pyproject agreed rules"
+      #     git config user.name "github-actions[bot]"
+      #     git config user.email "github-actions[bot]@users.noreply.github.com"
+      #
+      #     git add .
+      #     git commit -m "LINTER BOT: lint and format in CI [skip ci]" || echo "No changes to commit"
+      #
+      #     if [ "${{ github.event_name }}" = "pull_request" ]; then
+      #       git push origin HEAD:${{ github.head_ref }}
+      #     else
+      #       git push origin ${{ github.ref_name }}
+      #     fi
+

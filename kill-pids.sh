@@ -50,7 +50,7 @@ echo "Total processes: $PID_COUNT"
 echo
 
 # Ask for confirmation
-echo -e "${RED}⚠️  WARNING: This will terminate the processes listed above!${NC}"
+echo -e "${RED}WARNING: This will terminate the processes listed above!${NC}"
 read -p "$(echo -e "${YELLOW}Do you want to kill these processes? (y/N): ${NC}")" -n 1 -r
 echo
 
@@ -71,7 +71,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         fi
       fi
     else
-      print_warning "Process $pid no longer exists"
+      echo -e "${GREEN}Process $pid no longer exists${NC}"
     fi
   done
 
